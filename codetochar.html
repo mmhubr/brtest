@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="uft-8">
+<title>HTML-JavaScript</title>
+
+</head>
+<body>
+<h1>Unicode to Character</h1>
+
+<p>
+    <label>文字コード(ex:U+20B9F -> 0x20B9F)：<input type="text" id="charCode"></label>
+    <input type="button" value="Check" id="checkButton">
+    </p>
+<p id="msg"></p>
+
+<script>
+function butotnClick(){
+    var msg = document.getElementById('msg');
+    var charCode = document.getElementById('charCode');
+  //console.log(charCode.value); 
+  //var charFromCode = String.fromCharCode(charCode);
+  var charFromCode = String.fromCodePoint(charCode.value);
+  //console.log(charFromCode); 
+  msg.innerText = 'CharCde: ' + charFromCode;
+
+// Code Pointが`12354`の文字を取得する
+//console.log(String.fromCodePoint(12354)); // => "あ"
+// `12354`を16進数リテラルで表記しても同じ結果
+//console.log(String.fromCodePoint(0x3042)); // => "あ"
+// 上位サロゲート + 下位サロゲートの組み合わせ
+//console.log("\uD867\uDE3D"); // => "𩸽"
+// Code Pointでの表現
+//console.log("\u{29e3d}"); // => "𩸽"
+
+
+}
+
+//var msg = document.getElementById('msg');
+    
+var checkButton = document.getElementById('checkButton');
+checkButton.addEventListener('click', butotnClick);
+</script>
+
+
+</body>
+</html>
