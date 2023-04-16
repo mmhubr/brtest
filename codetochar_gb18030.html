@@ -12,7 +12,7 @@
     <label>文字コード(ex:U+20B9F -> 0x20B9F)：<input type="text" id="charCode"></label>
     <input type="button" value="Check" id="checkButton">
     </p>
-<p id="msg"></p>
+<p id="msg">Character:</p>
 
 <script>
 function butotnClick(){
@@ -22,7 +22,7 @@ function butotnClick(){
   //var charFromCode = String.fromCharCode(charCode);
   var charFromCode = String.fromCodePoint(charCode.value);
   //console.log(charFromCode); 
-  msg.innerText = 'CharCde: ' + charFromCode;
+  msg.innerText = 'Character: ' + charFromCode;
 
 // Code Pointが`12354`の文字を取得する
 //console.log(String.fromCodePoint(12354)); // => "あ"
