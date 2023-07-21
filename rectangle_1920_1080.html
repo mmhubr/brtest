@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1920 x 1080</title>
+    <style type="text/css">
+        body {margin: 0;}
+    </style>
+    <script>
+		window.addEventListener('load', function(){
+			
+			// Fullscreen
+			document.getElementById('button1').addEventListener('click', function(){
+				document.body.requestFullscreen();				
+			});
+
+			// disable Fullscreen
+			document.getElementById('button2').addEventListener('click', function(){
+				document.exitFullscreen();
+			});
+		});
+	</script>
+</head>
+<body>
+    <svg width="1920" height="1080">
+        <rect width="1920" height="1080" style="fill:rgb(0,255,255);stroke-width:2;stroke:rgb(255, 0, 0)" />
+        <text x="00" y="15" class="text">
+         size: 1920 x 1080
+            </text>
+    </svg>
+    <button id="button1">Fullscreen</button>
+    <button id="button2">Disable</button>
+</body>
+</html>
+
