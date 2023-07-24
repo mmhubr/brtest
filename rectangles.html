@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        body {margin: 0;}
+    </style>
+        <script>
+            window.addEventListener('load', function(){
+                
+                // Fullscreen
+                document.getElementById('button1').addEventListener('click', function(){
+                    document.body.requestFullscreen();				
+                });
+    
+                // disable Fullscreen
+                document.getElementById('button2').addEventListener('click', function(){
+                    document.exitFullscreen();
+                });
+            });
+        </script>
+
+</head>
+<body>
+    <canvas id="cv" width="1024" height="768"></canvas>
+
+    <script>
+        var ctx = document.getElementById("cv").getContext("2d");
+        ctx.font = '12px Meiryo';
+        
+        // rectangle 200 x 100
+        ctx.strokeStyle = 'rgba(255, 0, 0, 1)';
+        ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+        ctx.strokeRect(0, 0, 200, 100); 
+        ctx.fillText('200 x 100', 0, 100 - 2);
+        
+        // rectangle 500 x 300
+        ctx.strokeStyle = 'rgba(0, 255, 0, 1)';
+        ctx.fillStyle = 'rgba(0, 255, 0, 1)';
+        ctx.strokeRect(0, 0, 500, 300); 
+        ctx.fillText('500 x 300', 0, 300- 2);
+
+        // rectangle 1024 x 500
+        ctx.strokeStyle = 'rgba(255, 0, 0, 1)';
+        ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+        ctx.strokeRect(0, 0, 1024, 500); 
+        ctx.fillText('1024 x 500', 0, 500- 2);
+    </script>
+        <button id="button1">Fullscreen</button>
+        <button id="button2">Disable</button>
+</body>
+</html>
+
