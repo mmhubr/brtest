@@ -75,7 +75,32 @@
         <a href="https://www.ssllabs.com/"> ssllabs.com for Browser Test </a>
     </li>
     <li>
-        <a href="myoutput.html"> myoutput.html hoan</a>
+        <p> badssl test web site </p>
+
+        <p>期限切れ証明書: 有効期限が切れたSSL証明書</p>p
+        <p>net::ERR_CERT_DATE_INVALID</p>
+        <p><a href="https://expired.badssl.com/" >https://expired.badssl.com/</a></p>
+        
+        <p>ホスト名が一致しない: 証明書に書かれているドメイン名（例: *.example.com）と、アクセスしたドメイン名（wrong.host.badssl.com）が一致しないケース。</p>p
+        <p>net::ERR_CERT_COMMON_NAME_INVALID</p>
+        <p><a href="wrong.host.badssl.com" >wrong.host.badssl.com</a></p>
+
+        <p>自己署名証明書: 信頼された認証局（CA）ではなく、サーバ運営者自身が発行した（オレオレ）証明書。</p>p
+        <p>net::ERR_CERT_COMMON_NAME_INVALID</p>
+        <p><a href="https://self-signed.badssl.com/" >https://self-signed.badssl.com/</a></p>
+
+        <p>信頼できないルート認証局: OSやブラウザが信頼していない、未知の認証局によって発行された証明書。</p>p
+        <p>net::ERR_CERT_AUTHORITY_INVALID</p>
+        <p><a href="https://untrusted-root.badssl.com/">https://untrusted-root.badssl.com/</a></p>
+
+        <p>失効済みの証明書: 有効期限内だが、認証局によって強制的に無効化された（盗難などの理由で）証明書。</p>p
+        <p>net::ERR_CERT_REVOKED</p>
+        <p><a href="https://revoked.badssl.com/">https://revoked.badssl.com/</a></p>
+
+        <p>中間証明書がSHA-1: 現在では安全でないと見なされる古いハッシュアルゴリズム「SHA-1」が、証明書チェーンの途中で使われているケース。</p>p
+        <p>net::ERR_CERT_AUTHORITY_INVALID</p>
+        <p><a href="https://sha1-intermediate.badssl.com/">https://sha1-intermediate.badssl.com/</a></p>
+        
     </li>
 
 
@@ -83,3 +108,4 @@
 
 </body>
 </html>
+
